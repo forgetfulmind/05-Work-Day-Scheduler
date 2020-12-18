@@ -39,7 +39,7 @@ function buildBlocks(squid){
         button.attr("class","saveBtn")
         button.attr("id", squid[i])
         let img = $("<img>")
-        img.attr("src", "../Assets/lock.png")
+        img.attr("src", "./Assets/lock.png")
         button.append(img)
         row.append(button)
 
