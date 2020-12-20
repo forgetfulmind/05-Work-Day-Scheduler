@@ -29,32 +29,72 @@ setInterval(function(){
 
 //when I load the page I want to see 12 blocks, 1 for each hour 
 buildBlocks(workHours);
+setButtons(workHours);
 
+//button functionality
+$("#button9").on("click", function(){
+        console.log("hello!")
+        console.log(input9)
+        localStorage.setItem("input9", input9.value)
+    })
+
+input9.value = localStorage.getItem("input9")
+
+//button functionality loop
+function setButtons (squid){
+    for (let i=0;i<squid.length;i++){
+        //function x(){console.log(squid[i])}
+        $("#"+"button"+squid[i].key).on("click", 
+        function(){
+            console.log("hello! Again!")
+            console.log(squid[i].key)
+        let x = "input" + squid[i].key
+        console.log(x) 
+        localStorage.setItem("input" + squid[i].key, x.value) //WHY DOESN"T WORK!?!?!
+    }
+    )
+}}
+
+
+
+
+//Build buttons
 function buildBlocks(squid){
     blockContainer.empty();
     for (i=0; i < squid.length; i++){
-        let row = $("<p>")
+        let row = $("<div>")
         row.attr("id", squid[i].time)
+        row.attr("class", "row")
     //each block is labeled per hour
-    //make span
-        let span = $("<span>").text(squid[i].time)
-        span.attr("class", "time-block")
+    //make time of day display
+        let span = $("<div>").text(squid[i].time)
+        span.attr("class", "time-block col-2")
         row.append(span);
     //each block has a text field that is editable
-    //make input
+    //make input field
         let task = $("<input>")
+        task.attr("id", "input"+ squid[i].key)
+        task.attr("class", "input col-8")
+                //localStorage.setItem("input"+ squid[i].key, "")
+        //task.value = localStorage.getItem("input"+ squid[i].key)
         row.append(task);
     //each block has a save button next to it
-
     //make button
         let button = $("<button>")
-        button.attr("class","saveBtn")
-        button.attr("id", squid[i].time)
+        button.attr("class","saveBtn col-2")
+        button.attr("id", "button"+squid[i].key)
         let img = $("<img>")
         img.attr("src", "./Assets/lock.png")
         button.append(img)
+                // button.on("click", function(){
+                //     console.log("hello!")
+                //     localStorage.setItem("input9", "1")
+                // })
     //click to save the field into local storage
-
+                // function setValue(){
+                //     console.log("hello!")
+                //     localStorage.setItem("input"+ squid[i].key, $(squid[i].key).value)
+                // }
     //add button
         row.append(button)
 
