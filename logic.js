@@ -48,9 +48,10 @@ function setButtons (squid){
         function(){
             console.log("hello! Again!")
             console.log(squid[i].key)
-        let x = "input" + squid[i].key
-        console.log(x) 
-        localStorage.setItem("input" + squid[i].key, x.value) //WHY DOESN"T WORK!?!?!
+        //WHY DOESN"T WORK!?!?!
+        // let x = "input" + squid[i].key
+        // console.log(x)
+        localStorage.setItem("input" + squid[i].key, $("input" + squid[i].key).value) //WHY DOESN"T WORK!?!?!
     }
     )
 }}
