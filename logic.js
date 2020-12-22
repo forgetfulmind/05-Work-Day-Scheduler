@@ -31,27 +31,24 @@ setInterval(function(){
 buildBlocks(workHours);
 setButtons(workHours);
 
-//button functionality
-$("#button9").on("click", function(){
-        console.log("hello!")
-        console.log(input9)
-        localStorage.setItem("input9", input9.value)
-    })
 
 input9.value = localStorage.getItem("input9")
+input10.value = localStorage.getItem("input10")
+input11.value = localStorage.getItem("input11")
+input12.value = localStorage.getItem("input12")
+input13.value = localStorage.getItem("input13")
+input14.value = localStorage.getItem("input14")
+input15.value = localStorage.getItem("input15")
+input16.value = localStorage.getItem("input16")
+input17.value = localStorage.getItem("input17")
 
 //button functionality loop
 function setButtons (squid){
     for (let i=0;i<squid.length;i++){
-        //function x(){console.log(squid[i])}
         $("#"+"button"+squid[i].key).on("click", 
         function(){
-            console.log("hello! Again!")
-            console.log(squid[i].key)
-        //WHY DOESN"T WORK!?!?!
-        // let x = "input" + squid[i].key
-        // console.log(x)
-        localStorage.setItem("input" + squid[i].key, $("input" + squid[i].key).value) //WHY DOESN"T WORK!?!?!
+        let x = $("#input"+squid[i].key+"")
+        localStorage.setItem("input" + squid[i].key, x[0].value)
     }
     )
 }}
@@ -76,8 +73,6 @@ function buildBlocks(squid){
         let task = $("<input>")
         task.attr("id", "input"+ squid[i].key)
         task.attr("class", "input col-8")
-                //localStorage.setItem("input"+ squid[i].key, "")
-        //task.value = localStorage.getItem("input"+ squid[i].key)
         row.append(task);
     //each block has a save button next to it
     //make button
@@ -87,15 +82,6 @@ function buildBlocks(squid){
         let img = $("<img>")
         img.attr("src", "./Assets/lock.png")
         button.append(img)
-                // button.on("click", function(){
-                //     console.log("hello!")
-                //     localStorage.setItem("input9", "1")
-                // })
-    //click to save the field into local storage
-                // function setValue(){
-                //     console.log("hello!")
-                //     localStorage.setItem("input"+ squid[i].key, $(squid[i].key).value)
-                // }
     //add button
         row.append(button)
 
