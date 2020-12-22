@@ -1,17 +1,9 @@
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 4vw;
   line-height: 1;
+  font-family: monospace;
 }
 
-textarea{
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
-}
 
 .jumbotron {
   text-align: center;
@@ -19,45 +11,37 @@ textarea{
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 4vw;
 }
 
 .title {
-  font-size: 15vw;
+  font-size: 6vw;
 }
 
-.description{
-  white-space: pre-wrap;
+.lead {
+  font-size: 3vw;
 }
+
 
 .time-block{
-  text-align: center;
-  border-radius: 15px;
-  margin-top: 10px;
-  margin-left: auto 0;
-  margin-right: auto 0;
- 
+  border: 3px solid grey;
+  font-size: 2vh;
+  color: black;
+  padding: 1vw;
 
 }
 
 .input{
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   background: transparent;
-  border: none;
+  border: 3px solid grey;
+  font-size: 3vh;
 }
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: 12vh;
   border-top: 5px solid rgb(0, 0, 0);;
-}
-
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
 }
 
 .past {
@@ -66,12 +50,12 @@ textarea{
 }
 
 .present {
-  background-color: #ffee00;
+  background-color: rgba(255,255,0,0.4);
   color: white;
 }
 
 .future {
-  background-color: #2200b9;
+  background-color: rgba(0,0,255,0.4);
   color: white;
 }
 
@@ -85,12 +69,6 @@ textarea{
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
   background-color: #525252;
-}
-
-#currentDay {
-  font-family: monospace;
 }
 

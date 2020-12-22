@@ -25,7 +25,7 @@ setInterval(function(){
 //update every 10 mins
 setInterval(function(){
     buildBlocks(workHours);
-                    },1000 * 60 * 10)
+                    },1000 * 60)
 
 //when I load the page I want to see 12 blocks, 1 for each hour 
 buildBlocks(workHours);
