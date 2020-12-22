@@ -82,12 +82,15 @@ function buildBlocks(squid){
 
  //make clear button
  function clearButton(){
+    let row = $("<div>")
+    row.attr("class","row")
     let button = $("<button></button>")
     button[0].textContent = "clear"
     button.attr("id", "clearButton")
     button.attr("class","button")
     button.attr("type", "button")
-    blockContainer.append(button)
+    row.append(button)
+    blockContainer.append(row)
  }
 
  $("#clearButton").on("click", function(){
