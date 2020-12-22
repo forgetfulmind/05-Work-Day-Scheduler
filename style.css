@@ -1,16 +1,17 @@
 body {
   font-size: 4vw;
   line-height: 1;
-  font-family: monospace;
+  font-family: 'Franklin Gothic Medium';
+  background-color: black;
 }
 
 
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: black;
+  color:teal;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid orange;
 }
 
 .title {
@@ -45,17 +46,17 @@ body {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color:  rgba(173, 173, 173, 0.9);
   color: white;
 }
 
 .present {
-  background-color: rgba(255,255,0,0.3);
+  background-color:  rgba(255,255,0,.9);
   color: white;
 }
 
 .future {
-  background-color: rgba(0,0,255,0.3);
+  background-color: rgba(0,0,255,0.9);
   color: white;
 }
 
