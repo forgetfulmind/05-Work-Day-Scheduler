@@ -22,17 +22,15 @@ setInterval(function(){
     currentDay.append(dayjs().format('dddd MMMM DD' + " - " +'h:mm:ss:a'));
 },1000)
 
-// //update every 10 mins
-// setInterval(function(){
-//     buildBlocks(workHours);
-//     setButtons(workHours);
-//     saveItem();
-//                     },1000)
+//update colors ever minute
+setInterval(function(){
+    setColors();
+                    },1000)
 
 //when I load the page I want to see 12 blocks, 1 for each hour 
 buildBlocks(workHours);
 setButtons(workHours);
-
+setColors();
 
 //button functionality loop
 function setButtons (squid){
@@ -54,8 +52,8 @@ function buildBlocks(squid){
     for (i=0; i < squid.length; i++){
         let row = $("<div>")
         row.attr("id", squid[i].time)
-        row.attr("class", "row")
         row.attr("key", squid[i].key)
+        row.attr("class", "row hour")
     //each block is labeled per hour
     //make time of day display
         let span = $("<div>").text(squid[i].time)
@@ -78,21 +76,21 @@ function buildBlocks(squid){
     //add button
         row.append(button)
 
-    //past hour blocks have class .past 
-            if (parseInt(squid[i].key) < parseInt(dayjs().format('H'))){
-                row.attr("class","row past")
-            }
+    // //past hour blocks have class .past 
+    //         if (parseInt(squid[i].key) < parseInt(dayjs().format('H'))){
+    //             row.attr("class","row past")
+    //         }
                   
-    //current hour block has class .present 
-            else if (parseInt(squid[i].key) === parseInt(dayjs().format('H'))){
-                row.attr("class","row present")        
-            }
+    // //current hour block has class .present 
+    //         else if (parseInt(squid[i].key) === parseInt(dayjs().format('H'))){
+    //             row.attr("class","row present")        
+    //         }
 
-    //future hour blocks have classfuture
-            else {
-                row.attr("class","row future")
+    // //future hour blocks have classfuture
+    //         else {
+    //             row.attr("class","row future")
             
-            }
+    //         }
         blockContainer.append(row)
     }}
 
@@ -111,23 +109,25 @@ function buildBlocks(squid){
     input16.value = localStorage.getItem("input16")
     input17.value = localStorage.getItem("input17")
 
-// function setColors(){
 
 
-// //class dynamic update
-//         //past hour blocks have class .past 
-//         if (parseInt($(this).key) < parseInt(dayjs().format('H'))){
-//             $(this).attr("class","row past")
-//         }
-              
-// //current hour block has class .present 
-//         else if (parseInt($(this).key) === parseInt(dayjs().format('H'))){
-//             $(this).attr("class","row present")        
-//         }
+function setColors(){
+for (let i=0; i< 9; i++){
+let x = $(".hour")[i].attributes[1].value
+ //past hour blocks have class .past 
+ if (parseInt(x) < parseInt(dayjs().format('H'))){
+    $(".hour")[i].className = "row hour past"
+}
+      
+//current hour block has class .present 
+else if (parseInt(x) === parseInt(dayjs().format('H'))){
+    $(".hour")[i].className = "row hour present"        
+}
 
-// //future hour blocks have classfuture
-//         else {
-//             $(this).attr("class","row future")
-        
-//         }
-// }
+//future hour blocks have classfuture
+else {
+    $(".hour")[i].className = "row hour future"
+
+}
+}}
+
