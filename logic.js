@@ -31,6 +31,7 @@ setInterval(function(){
 buildBlocks(workHours);
 setButtons(workHours);
 setColors();
+clearButton();
 
 //button functionality loop
 function setButtons (squid){
@@ -70,33 +71,41 @@ function buildBlocks(squid){
         let button = $("<button>")
         button.attr("class","saveBtn col-2")
         button.attr("id", "button"+squid[i].key)
+        button.attr("type", "button")
         let img = $("<img>")
         img.attr("src", "./Assets/lock.png")
         button.append(img)
     //add button
         row.append(button)
-
-    // //past hour blocks have class .past 
-    //         if (parseInt(squid[i].key) < parseInt(dayjs().format('H'))){
-    //             row.attr("class","row past")
-    //         }
-                  
-    // //current hour block has class .present 
-    //         else if (parseInt(squid[i].key) === parseInt(dayjs().format('H'))){
-    //             row.attr("class","row present")        
-    //         }
-
-    // //future hour blocks have classfuture
-    //         else {
-    //             row.attr("class","row future")
-            
-    //         }
         blockContainer.append(row)
     }}
 
+ //make clear button
+ function clearButton(){
+    let button = $("<button></button>")
+    button[0].textContent = "clear"
+    button.attr("id", "clearButton")
+    button.attr("class","button")
+    button.attr("type", "button")
+    blockContainer.append(button)
+ }
 
+ $("#clearButton").on("click", function(){
+   clearStorage();
+})
 
-
+function clearStorage(){
+    localStorage.clear();
+    input9.value = localStorage.getItem("input9")
+    input10.value = localStorage.getItem("input10")
+    input11.value = localStorage.getItem("input11")
+    input12.value = localStorage.getItem("input12")
+    input13.value = localStorage.getItem("input13")
+    input14.value = localStorage.getItem("input14")
+    input15.value = localStorage.getItem("input15")
+    input16.value = localStorage.getItem("input16")
+    input17.value = localStorage.getItem("input17")
+}
 
 //field and storage link 
     input9.value = localStorage.getItem("input9")
