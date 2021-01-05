@@ -8,6 +8,6 @@ Deployed Website (https://forgetfulmind.github.io/05-Work-Day-Scheduler/)
 Repository: (https://github.com/forgetfulmind/05-Work-Day-Scheduler)
 
 Screenshots: 
-[screenshot1](./Assets/screecap1.jpg)
-[screenshot2](./Assets/screecap2.jpg)
+[screenshot1](./Assets/screencap1.jpg)
+[screenshot2](./Assets/screencap2.jpg)
 
